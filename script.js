@@ -5,5 +5,6 @@ function Book() {
 }
 
 function addBookToLibrary() {
-  // do stuff here
+  // Create event listener for user input
+  const titleInput = document.querySelector('#book-title');
 }

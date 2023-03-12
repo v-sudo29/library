@@ -7,6 +7,6 @@ function Book() {
 function addBookToLibrary() {
 }
 
-// Create event listener for user input
+// Create event listener for submit button
 const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', () => addBookToLibrary);

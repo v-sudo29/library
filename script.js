@@ -1,5 +1,5 @@
 // GLOBAL VARIABLES
-const myLibrary =['ExampleBook1', 'ExampleBook2'];
+const myLibrary =[];
 
 
 // FUNCTION: Book constructor
@@ -48,6 +48,11 @@ submitButton.addEventListener('click', () => {
   addBookToLibrary();
   displayBooks();
 });
+
+// Sample books
+const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, true);
+myLibrary.push(sampleBook);
+console.table(myLibrary);
 
 // Display current books onto page
 displayBooks();

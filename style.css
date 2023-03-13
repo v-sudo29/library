@@ -22,10 +22,14 @@ body, html {
 /* Form */
 .new-book-form-container {
   border: 2px solid green;
-  display: flex;
+  width: 30%;
+  height: 30%;
 }
 
 #new-book-form {
   border: 2px solid red;
-  flex: 0;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
 }

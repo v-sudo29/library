@@ -70,4 +70,11 @@ console.table(myLibrary);
 
 // Display current books onto page
 displayBooks();
-// document.getElementById('new-book-form').style.display='none';
+
+// Display modal
+const modal = document.querySelector('.modal');
+const openModal = document.querySelector('.new-book-button');
+
+openModal.addEventListener('click', () => {
+  modal.showModal();
+});

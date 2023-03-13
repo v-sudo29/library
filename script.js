@@ -1,7 +1,11 @@
 const myLibrary =['ExampleBook1', 'ExampleBook2'];
 
-function Book() {
+function Book(title, author, pages, read) {
   // the constructor
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
 }
 
 function addBookToLibrary() {
@@ -22,7 +26,7 @@ function displayBooks() {
   const newCardsInnerContainer = document.createElement('div');
   newCardsInnerContainer.setAttribute('class', 'cards-inner-container');
   
-  for (let i = 0; i < myLibrary.length; i++) {
+  for (let i = 0; i < myLibrary.length; i ++) {
     const title = document.createTextNode(`${myLibrary[i]}`);
     bookTitleDiv.appendChild(title);
     cardDiv.appendChild(bookTitleDiv);

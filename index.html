@@ -10,14 +10,13 @@
 </head>
 <body>
   <div>
-    <div>
-      <label for="book-title">Book Title</label>
-      <input type="text" id="book-title" name="book-title" required>
-      <button class="submit-button" type="submit">Submit</button>
-    </div>
+<!-- New Book Button -->
+    
     <div>
       <button class="new-book-button" type="submit">NEW BOOK</button>
     </div>
+
+<!-- Form Modal -->
     <dialog class="modal new-book-form-container">
       <form action="" id="new-book-form" method="dialog">
         <div>
@@ -37,16 +36,15 @@
           <input type="checkbox" id="book-read" name="read">
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button class="submit-button" type="submit">Submit</button>
         </div>
       </form>
     </dialog>
+
   </div>
   <div class="cards-outer-container">
     <div>Books</div>
-    <div class="cards-inner-container">
-
-    </div>
+    <div class="cards-inner-container"></div>
   </div>
 </body>
 </html>

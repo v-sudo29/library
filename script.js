@@ -15,11 +15,15 @@ function Book(title, author, pages, read) {
 function addBookToLibrary() {
 
   // Obtain value of user input
-  const bookTitle = document.querySelector('input').value;
+  const bookTitle = document.querySelector('#book-title').value;
+  const bookAuthor = document.querySelector('#book-author').value;
+  const bookPages = document.querySelector('#book-pages').value;
+  const bookRead = document.querySelector('#book-read').value;
 
-  // Add user input to myLibrary array
-  myLibrary.push(bookTitle);
-  return myLibrary;
+  // Create new Book object to store user input
+  const newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
+  myLibrary.push(newBook);
+  return console.table(myLibrary);
 }
 
 // FUNCTION: Displays books onto page
@@ -66,7 +70,6 @@ submitButton.addEventListener('click', () => {
 // Sample books
 const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, true);
 myLibrary.push(sampleBook);
-console.table(myLibrary);
 
 // Display current books onto page
 displayBooks();

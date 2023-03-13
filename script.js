@@ -32,7 +32,7 @@ function displayBooks() {
   const newCardsInnerContainer = document.createElement('div');
   newCardsInnerContainer.setAttribute('class', 'cards-inner-container');
   
-  for (let i = 0; i < myLibrary.length; i ++) {
+  for (let i = 0; i < myLibrary.length; i += 1) {
     const title = document.createTextNode(`${myLibrary[i]}`);
     bookTitleDiv.appendChild(title);
     cardDiv.appendChild(bookTitleDiv);

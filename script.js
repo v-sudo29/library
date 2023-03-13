@@ -17,21 +17,26 @@ function displayBooks() {
   const cardDiv =  document.createElement('div');
   cardDiv.setAttribute('class', 'card');
   const bookTitleDiv = document.createElement('div');
-  const cardsContainer = document.querySelector('.cards-container')
+  const cardsOuterContainer = document.querySelector('.cards-outer-container');
+  const cardsInnerContainer = document.querySelector('.cards-inner-container');
+  const newCardsInnerContainer = document.createElement('div');
+  newCardsInnerContainer.setAttribute('class', 'cards-inner-container');
   
   for (let i = 0; i < myLibrary.length; i++) {
     const title = document.createTextNode(`${myLibrary[i]}`);
     bookTitleDiv.appendChild(title);
     cardDiv.appendChild(bookTitleDiv);
 
-    cardsContainer.appendChild(cardDiv);
+    newCardsInnerContainer.appendChild(cardDiv);
   }
+  cardsOuterContainer.replaceChild(newCardsInnerContainer, cardsInnerContainer);
 }
 
 // Create event listener for submit button
 const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', () => {
-  console.log(addBookToLibrary());
+  addBookToLibrary();
+  displayBooks();
 });
 
 displayBooks();

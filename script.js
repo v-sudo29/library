@@ -4,7 +4,7 @@ const myLibrary =['ExampleBook1', 'ExampleBook2'];
 
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
-  // the constructor
+
   this.title = title;
   this.author = author;
   this.pages = pages;

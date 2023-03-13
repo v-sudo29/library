@@ -18,3 +18,14 @@ body, html {
 .card {
   border: 2px solid black;
 }
+
+/* Form */
+.new-book-form-container {
+  border: 2px solid green;
+  display: flex;
+}
+
+#new-book-form {
+  border: 2px solid red;
+  flex: 0;
+}

@@ -70,3 +70,4 @@ console.table(myLibrary);
 
 // Display current books onto page
 displayBooks();
+// document.getElementById('new-book-form').style.display='none';

@@ -1,5 +1,8 @@
+// GLOBAL VARIABLES
 const myLibrary =['ExampleBook1', 'ExampleBook2'];
 
+
+// FUNCTION: Book constructor
 function Book(title, author, pages, read) {
   // the constructor
   this.title = title;
@@ -8,7 +11,9 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+// FUNCTION: Adds book to myLibrary array
 function addBookToLibrary() {
+
   // Obtain value of user input
   const bookTitle = document.querySelector('input').value;
 
@@ -17,6 +22,7 @@ function addBookToLibrary() {
   return myLibrary;
 }
 
+// FUNCTION: Displays books onto page
 function displayBooks() {
   const cardDiv =  document.createElement('div');
   cardDiv.setAttribute('class', 'card');
@@ -36,11 +42,12 @@ function displayBooks() {
   cardsOuterContainer.replaceChild(newCardsInnerContainer, cardsInnerContainer);
 }
 
-// Create event listener for submit button
+// Event listener for submit button
 const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', () => {
   addBookToLibrary();
   displayBooks();
 });
 
+// Display current books onto page
 displayBooks();

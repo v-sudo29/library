@@ -170,10 +170,41 @@ body {
   gap: 10px;
 
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .checkbox-container {
   display: flex;
   gap: 8px;
+}
+
+.buttons-pair {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.submit-button, .cancel-button {
+  border: none;
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #86efac;
+}
+
+.submit-button:hover {
+  background-color: #4ade80;
+}
+
+.cancel-button {
+  background-color: #f3f4f6;;
+}
+
+.cancel-button:hover {
+  background-color: #d4d4d8;
 }

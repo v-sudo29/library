@@ -8,12 +8,22 @@
 }
 
 body, html {
-  display: grid;
-  grid-template-rows: 1fr 8fr;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Cards */

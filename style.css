@@ -27,6 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow:0 2px 3px rgb(0 0 0 / 0.1);
 }
 
 .library-title {
@@ -36,7 +37,6 @@ body {
 
 /* Content */
 .content-container {
-  border: 2px solid black;
   display: flex;
   flex-direction: column;
 }

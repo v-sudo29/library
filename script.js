@@ -1,7 +1,6 @@
 // GLOBAL VARIABLES
 const myLibrary =[];
 
-
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
 
@@ -92,6 +91,25 @@ submitButton.addEventListener('click', (e) => {
 
   // Disable sending info to a server
   e.preventDefault();
+});
+
+// BUTTON ('x'): Event listener for modal's exit button
+const exitButton = document.querySelector('.close-button');
+exitButton.addEventListener('click', () => {
+  const modal = document.querySelector('.modal');
+  if (modal.style.display === 'block') {
+    modal.style.display = 'none';
+  }
+});
+
+const body = document.querySelector('body');
+body.addEventListener('keydown', (e) => {
+  const modal = document.querySelector('.modal');
+  if (e['key'] === 'Escape') {
+    if (modal.style.display === 'block') {
+      modal.style.display = 'none';
+    }
+  }
 });
 
 // Sample books

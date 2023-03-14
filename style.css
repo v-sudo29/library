@@ -8,6 +8,8 @@
 }
 
 body, html {
+  display: grid;
+  grid-template-rows: 1fr 8fr;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
@@ -15,11 +17,19 @@ body, html {
 }
 
 /* Cards */
+.cards-outer-container {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
 .cards-inner-container {
   border: 2px solid red;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
   grid-template-rows: repeat(auto-fit, minmax(200px, 250px));
+  gap: 20px;
+  height: 100%;
 }
 
 .card {

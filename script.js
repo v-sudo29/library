@@ -133,6 +133,12 @@ body.addEventListener('keydown', (e) => {
   }
 });
 
+// Event listener for clicking on active overlay to exit
+overlay.addEventListener('click', () => {
+  modalOff();
+  overlayOff();
+});
+
 // Sample books
 const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, 'yes');
 myLibrary.push(sampleBook);

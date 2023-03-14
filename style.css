@@ -53,4 +53,5 @@ body, html {
 .modal-label-input-container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }

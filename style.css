@@ -42,7 +42,7 @@ body {
   flex-direction: column;
   padding: 30px 30px;
   gap: 30px;
-  background-color: #f3f4f6
+  background-color: #f3f4f6;
 }
 
 .new-book-container {
@@ -56,11 +56,20 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 15px;
-  padding: 0 30px;
+  padding: 0px 20px;
   font-size: 25px;
   font-weight: 700;
+  background-color: #f3f4f6;
+  transition: 200ms ease-in-out;
 }
 
+.new-book-button:hover {
+  background-color: #e5e7eb
+}
+
+.new-book-button:focus {
+  outline: none;
+}
 /* Cards */
 .cards-container {
   border: 2px solid red;

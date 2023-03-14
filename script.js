@@ -1,6 +1,8 @@
 // GLOBAL VARIABLES
 const myLibrary =[];
 const overlay = document.querySelector('#overlay');
+const modal = document.querySelector('.modal');
+const exitButton = document.querySelector('.close-button');
 
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
@@ -75,15 +77,21 @@ function overlayOn() {
   overlay.classList.add(["overlay-active"]);
 }
 
+// FUNCTION: turns modal on
+function modalOn() {
+  modal.style.display = 'block';
+  overlayOn();
+}
+
+// FUNCTION: turns modal off
+function modalOff() {
+    modal.style.display = 'none';
+    overlayOff();
+}
+
 // BUTTON ('NEW BOOK'): open modal
 const newBookButton = document.querySelector('.new-book-button');
-newBookButton.addEventListener('click', () => {
-  const modal = document.querySelector('.modal');
-  modal.style.display = 'block';
-
-  // Turn on overlay
-  overlayOn();
-});
+newBookButton.addEventListener('click', modalOn);
 
 
 // BUTTON ('Submit'): Event listener for submit button
@@ -97,7 +105,7 @@ submitButton.addEventListener('click', (e) => {
 
   // Prompt user again if not all required fields filled out
   if (titleValue === '' || authorValue === '' || pagesValue === '') {
-    console.log('Please fill out all input fields!');
+    alert('Please fill out all input fields!');
     return;
   } 
 
@@ -112,28 +120,16 @@ submitButton.addEventListener('click', (e) => {
   overlayOff();
 
   // Close modal
-  const modal = document.querySelector('.modal');
   modal.style.display = 'none';
 });
 
 // BUTTON ('x'): Event listener for modal's exit button
-const exitButton = document.querySelector('.close-button');
-exitButton.addEventListener('click', () => {
-  const modal = document.querySelector('.modal');
-  if (modal.style.display === 'block') {
-    modal.style.display = 'none';
-    overlayOff();
-  }
-});
+exitButton.addEventListener('click', modalOff);
 
 const body = document.querySelector('body');
 body.addEventListener('keydown', (e) => {
-  const modal = document.querySelector('.modal');
   if (e.key === 'Escape') {
-    if (modal.style.display === 'block') {
-      modal.style.display = 'none';
-      overlayOff();
-    }
+    modalOff();
   }
 });
 

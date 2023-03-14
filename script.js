@@ -129,7 +129,7 @@ exitButton.addEventListener('click', () => {
 const body = document.querySelector('body');
 body.addEventListener('keydown', (e) => {
   const modal = document.querySelector('.modal');
-  if (e['key'] === 'Escape') {
+  if (e.key === 'Escape') {
     if (modal.style.display === 'block') {
       modal.style.display = 'none';
       overlayOff();

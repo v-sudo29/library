@@ -32,15 +32,25 @@ body, html {
 
 .modal-header {
   display: flex;
-  justify-content: flex-end;
-  gap: 32%;
+  justify-content: space-between;
   border: 2px solid blue;
 }
 
+.modal-body {
+  display: flex;
+}
+
 #new-book-form {
-  border: 2px solid red;
-  height: 100%;
   display: flex;
   flex-flow: column;
+  padding: 10px;
+  width: 100%;
   gap: 1.5rem;
+
+  border: 2px solid red;
+}
+
+.modal-label-input-container {
+  display: flex;
+  flex-direction: column;
 }

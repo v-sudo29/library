@@ -21,14 +21,22 @@ body, html {
 
 /* Modal */
 .modal {
+  position: fixed;
   border: 2px solid green;
   width: 30%;
   height: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
 }
 
 .modal-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 32%;
   border: 2px solid blue;
 }
+
 #new-book-form {
   border: 2px solid red;
   height: 100%;

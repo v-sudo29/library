@@ -63,6 +63,7 @@ function displayBooks() {
 // Event listener for submit button
 const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', () => {
+  // if ()
   addBookToLibrary();
   displayBooks();
 });

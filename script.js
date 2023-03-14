@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
 const myLibrary =[];
-const overlay = document.querySelector('.overlay');
+const overlay = document.querySelector('#overlay');
 
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
@@ -44,7 +44,7 @@ function displayBooks() {
     const bookAuthorDiv = document.createElement('div');
     const bookPagesDiv = document.createElement('div');
     const bookReadDiv = document.createElement('div');
-    const cardsInnerContainer = document.querySelector('.cards-inner-container');
+    const cardsInnerContainer = document.querySelector('.cards-container');
 
     const title = document.createTextNode(`${myLibrary[i].title}`);
     const author = document.createTextNode(`${myLibrary[i].author}`);
@@ -67,12 +67,12 @@ function displayBooks() {
 
 // FUNCTION: turns off overlay
 function overlayOff() {
-  overlay.style.opacity = '0';
+  overlay.classList.remove(["overlay-active"]);
 }
 
 // FUNCTION: turns on overlay
 function overlayOn() {
-  overlay.style.opacity = '50%';
+  overlay.classList.add(["overlay-active"]);
 }
 
 // BUTTON ('NEW BOOK'): open modal

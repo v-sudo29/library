@@ -27,13 +27,13 @@ body {
 }
 
 /* Cards */
-.cards-outer-container {
+.content-container {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
 }
 
-.cards-inner-container {
+.cards-container {
   border: 2px solid red;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
@@ -51,12 +51,18 @@ body {
 .overlay {
   position: fixed;
   opacity: 0;
+  transition: 200ms ease-in-out;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, .5);
   pointer-events: none;
+}
+
+.overlay-active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Modal */

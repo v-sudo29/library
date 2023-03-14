@@ -15,6 +15,13 @@ body, html {
 }
 
 /* Cards */
+.cards-inner-container {
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 250px));
+}
+
 .card {
   border: 2px solid black;
 }

@@ -20,6 +20,8 @@ body, html {
 body {
   display: grid;
   grid-template-rows: 1fr 9fr;
+  grid-auto-flow: row;
+  word-wrap: break-word;
 }
 
 /* Header */
@@ -72,16 +74,17 @@ body {
 }
 /* Cards */
 .cards-container {
-  border: 2px solid red;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 250px));
-  gap: 20px;
-  height: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-flow: row;
+  gap: 30px;
+  padding: 30px 250px;
 }
 
 .card {
   border: 2px solid black;
+  padding: 100px;
 }
 
 /* Overlay */

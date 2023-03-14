@@ -79,13 +79,13 @@ function overlayOn() {
 
 // FUNCTION: turns modal on
 function modalOn() {
-  modal.style.display = 'block';
+  modal.classList.add(["modal-active"]);
   overlayOn();
 }
 
 // FUNCTION: turns modal off
 function modalOff() {
-    modal.style.display = 'none';
+  modal.classList.remove(["modal-active"]);
     overlayOff();
 }
 

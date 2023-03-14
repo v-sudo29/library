@@ -108,15 +108,23 @@ body {
 /* Modal */
 .modal {
   position: fixed;
-  display: none;
-  width: 30%;
-  height: 30%;
+  gap: 10px;
+  min-width: 40%;
+  min-height: 40%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -50%) scale(0);
   z-index: 10;
   border-radius: 15px;
   background-color: white;
+}
+
+.modal-header, .modal-body {
+  border: 2px solid red;
+}
+
+.modal-active {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-header {

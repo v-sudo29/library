@@ -19,7 +19,8 @@ body, html {
 
 body {
   display: grid;
-  grid-template-rows: 1fr 8fr;
+  grid-template-rows: 1fr 9fr;
+  gap: 40px;
 }
 
 /* Header */
@@ -50,10 +51,10 @@ body {
 
 .new-book-button {
   cursor: pointer;
+  border: none;
 }
 
 /* Cards */
-
 .cards-container {
   border: 2px solid red;
   display: grid;

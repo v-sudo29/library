@@ -19,13 +19,16 @@ body, html {
   border: 2px solid black;
 }
 
-/* Form */
-.new-book-form-container {
+/* Modal */
+.modal {
   border: 2px solid green;
   width: 30%;
   height: 30%;
 }
 
+.modal-header {
+  border: 2px solid blue;
+}
 #new-book-form {
   border: 2px solid red;
   height: 100%;

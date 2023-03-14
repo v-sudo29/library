@@ -1,5 +1,6 @@
 // GLOBAL VARIABLES
 const myLibrary =[];
+const overlay = document.querySelector('.overlay');
 
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
@@ -66,12 +67,11 @@ function displayBooks() {
 
 // FUNCTION: turns off overlay
 function overlayOff() {
-  const overlay = document.querySelector('.overlay');
   overlay.style.opacity = '0';
 }
+
 // FUNCTION: turns on overlay
 function overlayOn() {
-  const overlay = document.querySelector('.overlay');
   overlay.style.opacity = '50%';
 }
 

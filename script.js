@@ -64,11 +64,25 @@ function displayBooks() {
   }
 }
 
+// FUNCTION: turns off overlay
+function overlayOff() {
+  const overlay = document.querySelector('.overlay');
+  overlay.style.opacity = '0';
+}
+// FUNCTION: turns on overlay
+function overlayOn() {
+  const overlay = document.querySelector('.overlay');
+  overlay.style.opacity = '50%';
+}
+
 // BUTTON ('NEW BOOK'): open modal
 const newBookButton = document.querySelector('.new-book-button');
 newBookButton.addEventListener('click', () => {
   const modal = document.querySelector('.modal');
   modal.style.display = 'block';
+
+  // Turn on overlay
+  overlayOn();
 });
 
 
@@ -86,11 +100,20 @@ submitButton.addEventListener('click', (e) => {
     console.log('Please fill out all input fields!');
     return;
   } 
+
+  // Add book to myLibrary array and display new book
   addBookToLibrary();
   displayBooks();
 
   // Disable sending info to a server
   e.preventDefault();
+
+  // Turn off overlay
+  overlayOff();
+
+  // Close modal
+  const modal = document.querySelector('.modal');
+  modal.style.display = 'none';
 });
 
 // BUTTON ('x'): Event listener for modal's exit button
@@ -99,6 +122,7 @@ exitButton.addEventListener('click', () => {
   const modal = document.querySelector('.modal');
   if (modal.style.display === 'block') {
     modal.style.display = 'none';
+    overlayOff();
   }
 });
 
@@ -108,6 +132,7 @@ body.addEventListener('keydown', (e) => {
   if (e['key'] === 'Escape') {
     if (modal.style.display === 'block') {
       modal.style.display = 'none';
+      overlayOff();
     }
   }
 });

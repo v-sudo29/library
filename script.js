@@ -67,24 +67,33 @@ function displayBooks() {
   cardsOuterContainer.replaceChild(newCardsInnerContainer, cardsInnerContainer);
 }
 
-// Event listener for submit button
-// Disable sending info to a server
+// BUTTON ('NEW BOOK'): open modal
+const newBookButton = document.querySelector('.new-book-button');
+newBookButton.addEventListener('click', () => {
+  const modal = document.querySelector('.modal');
+  modal.style.display = 'block';
+});
+
+
+// BUTTON ('Submit'): Event listener for submit button
 const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', (e) => {
+
   // Get values from input textboxes
   const titleValue = document.querySelector('#book-title').value;
   const authorValue = document.querySelector('#book-author').value;
   const pagesValue = document.querySelector('#book-pages').value;
 
+  // Prompt user again if not all required fields filled out
   if (titleValue === '' || authorValue === '' || pagesValue === '') {
     console.log('Please fill out all input fields!');
     return;
   } 
-
   addBookToLibrary();
   displayBooks();
-  e.preventDefault();
 
+  // Disable sending info to a server
+  e.preventDefault();
 });
 
 // Sample books
@@ -93,12 +102,3 @@ myLibrary.push(sampleBook);
 
 // Display current books onto page
 displayBooks();
-
-// Display modal
-const modal = document.querySelector('.modal');
-const openModal = document.querySelector('.new-book-button');
-
-openModal.addEventListener('click', () => {
-  modal.showModal();
-});
-

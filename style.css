@@ -22,16 +22,20 @@ body, html {
 /* Modal */
 .modal {
   position: fixed;
+  display: none;
   width: 30%;
   height: 30%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
+  z-index: 10;
+  background-color: white;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 10px;
   border: 2px solid blue;
 }

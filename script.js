@@ -18,7 +18,14 @@ function addBookToLibrary() {
   const bookTitle = document.querySelector('#book-title').value;
   const bookAuthor = document.querySelector('#book-author').value;
   const bookPages = document.querySelector('#book-pages').value;
-  const bookRead = document.querySelector('#book-read').value;
+  const bookReadBoolean = document.querySelector('#book-read').checked;
+  let bookRead = null;
+
+  if (bookReadBoolean === true) {
+    bookRead = 'yes';
+  } else {
+    bookRead = 'no';
+  }
 
   // Create new Book object to store user input
   const newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
@@ -61,15 +68,27 @@ function displayBooks() {
 }
 
 // Event listener for submit button
+// Disable sending info to a server
 const submitButton = document.querySelector('.submit-button');
-submitButton.addEventListener('click', () => {
-  // if ()
+submitButton.addEventListener('click', (e) => {
+  // Get values from input textboxes
+  const titleValue = document.querySelector('#book-title').value;
+  const authorValue = document.querySelector('#book-author').value;
+  const pagesValue = document.querySelector('#book-pages').value;
+
+  if (titleValue === '' || authorValue === '' || pagesValue === '') {
+    console.log('Please fill out all input fields!');
+    return;
+  } 
+
   addBookToLibrary();
   displayBooks();
+  e.preventDefault();
+
 });
 
 // Sample books
-const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, true);
+const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, 'yes');
 myLibrary.push(sampleBook);
 
 // Display current books onto page
@@ -82,3 +101,4 @@ const openModal = document.querySelector('.new-book-button');
 openModal.addEventListener('click', () => {
   modal.showModal();
 });
+

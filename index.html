@@ -27,27 +27,29 @@
       <div><button class="close-button">&times;</button></div>
     </div>
     <div class="modal-body">
-      <form action="" id="new-book-form" method="dialog">
-        <div class="modal-label-input-container">
-          <label for="book-title">Title</label>
-          <input class="input-textbox" type="text" id="book-title" name="title" placeholder="Title" value="">
-        </div>
-        <div class="modal-label-input-container">
-          <label for="book-author">Author</label>
-          <input class="input-textbox" type="text" id="book-author" name="author" placeholder="Author" value="">
-        </div>
-        <div class="modal-label-input-container">
-          <label for="book-pages">Pages</label>
-          <input class="input-textbox" type="number" id="book-pages" name="pages" placeholder="Pages" value="">
-        </div>
-        <div>
-          <input class="checkbox" type="checkbox" id="book-read" name="read">
-          <label for="book-read">Read</label>
-        </div>
-        <div>
-          <button class="submit-button" type="submit">Submit</button>
-        </div>
-      </form>
+      <div>
+        <form action="" id="new-book-form" method="dialog">
+          <div class="modal-label-input-container">
+            <label for="book-title">Title</label>
+            <input class="input-textbox" type="text" id="book-title" name="title" placeholder="Title" value="">
+          </div>
+          <div class="modal-label-input-container">
+            <label for="book-author">Author</label>
+            <input class="input-textbox" type="text" id="book-author" name="author" placeholder="Author" value="">
+          </div>
+          <div class="modal-label-input-container">
+            <label for="book-pages">Pages</label>
+            <input class="input-textbox" type="number" id="book-pages" name="pages" placeholder="Pages" value="">
+          </div>
+          <div class="checkbox-container">
+            <input class="checkbox" type="checkbox" id="book-read" name="read">
+            <label class="checkbox-text" for="book-read">Check if read book</label>
+          </div>
+          <div>
+            <button class="submit-button" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 <!-- Overlay -->

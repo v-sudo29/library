@@ -151,6 +151,7 @@ body {
 
 .modal-body {
   display: flex;
+  flex-direction: column;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -163,11 +164,16 @@ body {
   gap: 1.5rem;
 }
 
-.modal-label-input-container {
+.modal-label-input-container, .checkbox-text {
   display: flex;
   flex-direction: column;
   gap: 10px;
 
   font-size: 20px;
   font-weight: 500;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 8px;
 }

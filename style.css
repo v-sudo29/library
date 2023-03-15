@@ -82,6 +82,7 @@ svg {
 .new-book-button:focus {
   outline: none;
 }
+
 /* Cards */
 .cards-container {
   display: grid;
@@ -101,6 +102,20 @@ svg {
   border-radius: 15px;
   background-color: white;
   font-size: 22px;
+}
+
+.book-title {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.book-author {
+  font-weight: 200;
+}
+
+.book-pages {
+  font-size: 15px;
+  font-weight: 200;
 }
 
 /* Overlay */

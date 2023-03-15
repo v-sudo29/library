@@ -17,7 +17,7 @@ console.log(addTitleQuotes('hi there'));
 function Book(title, author, pages, read) {
   this.title = addTitleQuotes(title);
   this.author = author;
-  this.pages = pages;
+  this.pages = pages + ' pages';
   this.read = read;
 }
 

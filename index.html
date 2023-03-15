@@ -19,7 +19,14 @@
     <div class="new-book-container">
       <button class="new-book-button" type="submit">+ Add Book</button>
     </div>
-    <div class="cards-container"></div>
+    <div class="cards-container">
+      <div class="card">
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
   </div>
 <!-- Modal -->
   <div class="modal">
@@ -35,18 +42,18 @@
         <form action="" id="form" method="dialog">
           <div class="modal-label-input-container">
             <label for="book-title">Title</label>
-            <input class="textbox" type="text" id="book-title" name="title" placeholder="Title" value="">
+            <input class="textbox" type="text" id="book-title-input" name="title" placeholder="Title" value="">
           </div>
           <div class="modal-label-input-container">
             <label for="book-author">Author</label>
-            <input class="textbox" type="text" id="book-author" name="author" placeholder="Author" value="">
+            <input class="textbox" type="text" id="book-author-input" name="author" placeholder="Author" value="">
           </div>
           <div class="modal-label-input-container">
             <label for="book-pages">Pages</label>
-            <input class="textbox input-number" type="number" id="book-pages" name="pages" placeholder="Pages" value="">
+            <input class="textbox input-number" type="number" id="book-pages-input" name="pages" placeholder="Pages" value="">
           </div>
           <div class="checkbox-container">
-            <input class="checkbox" type="checkbox" id="book-read" name="read">
+            <input class="checkbox" type="checkbox" id="book-read-input" name="read">
             <label class="checkbox-text" for="book-read">Completed</label>
           </div>
           <div class="buttons-pair">

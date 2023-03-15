@@ -89,6 +89,11 @@ function modalOff() {
     overlayOff();
 }
 
+// FUNCTION: reset form
+function resetForm() {
+  document.querySelector('#form').reset();
+}
+
 // BUTTON ('NEW BOOK'): open modal
 const newBookButton = document.querySelector('.new-book-button');
 newBookButton.addEventListener('click', modalOn);
@@ -120,7 +125,10 @@ submitButton.addEventListener('click', (e) => {
   overlayOff();
 
   // Close modal
-  modal.style.display = 'none';
+  modalOff();
+
+  // Reset all form values
+  resetForm();
 });
 
 // BUTTON ('x'): Event listener for modal's exit button
@@ -130,6 +138,7 @@ const body = document.querySelector('body');
 body.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     modalOff();
+    resetForm();
   }
 });
 
@@ -137,6 +146,7 @@ body.addEventListener('keydown', (e) => {
 overlay.addEventListener('click', () => {
   modalOff();
   overlayOff();
+  resetForm();
 });
 
 // Sample books

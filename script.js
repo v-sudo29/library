@@ -53,6 +53,9 @@ function displayBooks() {
     const bookAuthorDiv = document.createElement('div');
     const bookPagesDiv = document.createElement('div');
     const bookReadDiv = document.createElement('div');
+    const toggleContainer = document.createElement('label');
+    const input = document.createElement('input');
+    const span = document.createElement('span');
     const cardsInnerContainer = document.querySelector('.cards-container');
 
     cardDiv.setAttribute('class', 'card');
@@ -60,6 +63,9 @@ function displayBooks() {
     bookAuthorDiv.setAttribute('class', 'book-author');
     bookPagesDiv.setAttribute('class', 'book-pages');
     bookReadDiv.setAttribute('class', 'book-read');
+    toggleContainer.setAttribute('class', 'switch');
+    input.setAttribute('type', 'checkbox');
+    span.classList.add('slider', 'round');
 
     const title = document.createTextNode(`${myLibrary[i].title}`);
     const author = document.createTextNode(`${myLibrary[i].author}`);
@@ -70,11 +76,14 @@ function displayBooks() {
     bookAuthorDiv.appendChild(author);
     bookPagesDiv.appendChild(pages);
     bookReadDiv.appendChild(read);
+    toggleContainer.appendChild(input);
+    toggleContainer.appendChild(span);
 
     cardDiv.appendChild(bookTitleDiv);
     cardDiv.appendChild(bookAuthorDiv);
     cardDiv.appendChild(bookPagesDiv);
     cardDiv.appendChild(bookReadDiv);
+    cardDiv.appendChild(toggleContainer);
 
     cardsInnerContainer.appendChild(cardDiv);
   }
@@ -117,9 +126,9 @@ const submitButton = document.querySelector('.submit-button');
 submitButton.addEventListener('click', (e) => {
 
   // Get values from input textboxes
-  const titleValue = document.querySelector('#book-title').value;
-  const authorValue = document.querySelector('#book-author').value;
-  const pagesValue = document.querySelector('#book-pages').value;
+  const titleValue = document.querySelector('#book-title-input').value;
+  const authorValue = document.querySelector('#book-author-input').value;
+  const pagesValue = document.querySelector('#book-pages-input').value;
 
   // Prompt user again if not all required fields filled out
   if (titleValue === '' || authorValue === '' || pagesValue === '') {

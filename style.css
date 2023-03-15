@@ -172,7 +172,7 @@ body {
   gap: 10px;
 
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* Textboxes */
@@ -227,12 +227,18 @@ input::-webkit-inner-spin-button {
 .buttons-pair {
   display: flex;
   justify-content: center;
+  height: 50px;
   gap: 20px;
 }
 
+.submit-container, .cancel-container {
+  flex: 1 0 0;
+  display: flex;
+}
+
 .submit-button, .cancel-button {
+  flex: 1;
   border: none;
-  padding: 15px 40px;
   font-size: 20px;
   font-weight: 700;
   border-radius: 10px;

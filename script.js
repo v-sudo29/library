@@ -5,10 +5,17 @@ const modal = document.querySelector('.modal');
 const exitButton = document.querySelector('.close-button');
 const body = document.querySelector('body');
 
+// FUNCTION: Put title in double quotes
+function addTitleQuotes (title) {
+  const newTitle = "\"" + title + "\"";
+  return newTitle;
+}
+
+console.log(addTitleQuotes('hi there'));
+
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
-
-  this.title = title;
+  this.title = addTitleQuotes(title);
   this.author = author;
   this.pages = pages;
   this.read = read;
@@ -18,10 +25,10 @@ function Book(title, author, pages, read) {
 function addBookToLibrary() {
 
   // Obtain value of user input
-  const bookTitle = document.querySelector('#book-title').value;
-  const bookAuthor = document.querySelector('#book-author').value;
-  const bookPages = document.querySelector('#book-pages').value;
-  const bookReadBoolean = document.querySelector('#book-read').checked;
+  const bookTitle = document.querySelector('#book-title-input').value;
+  const bookAuthor = document.querySelector('#book-author-input').value;
+  const bookPages = document.querySelector('#book-pages-input').value;
+  const bookReadBoolean = document.querySelector('#book-read-input').checked;
   let bookRead = null;
 
   if (bookReadBoolean === true) {
@@ -42,12 +49,17 @@ function displayBooks() {
 
   for (let i = numberOfBooks - 1; i < myLibrary.length; i += 1) {
     const cardDiv =  document.createElement('div');
-    cardDiv.setAttribute('class', 'card');
     const bookTitleDiv = document.createElement('div');
     const bookAuthorDiv = document.createElement('div');
     const bookPagesDiv = document.createElement('div');
     const bookReadDiv = document.createElement('div');
     const cardsInnerContainer = document.querySelector('.cards-container');
+
+    cardDiv.setAttribute('class', 'card');
+    bookTitleDiv.setAttribute('class', 'book-title');
+    bookAuthorDiv.setAttribute('class', 'book-author');
+    bookPagesDiv.setAttribute('class', 'book-pages');
+    bookReadDiv.setAttribute('class', 'book-read');
 
     const title = document.createTextNode(`${myLibrary[i].title}`);
     const author = document.createTextNode(`${myLibrary[i].author}`);

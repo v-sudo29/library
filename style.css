@@ -181,6 +181,18 @@ input:checked + .toggle:before {
   font-weight: 200;
 }
 
+.book-read-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.book-read {
+  display: flex;
+  align-items: center;
+}
+
 /* Overlay */
 .overlay {
   position: fixed;

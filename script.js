@@ -53,6 +53,7 @@ function displayBooks() {
     const bookAuthorDiv = document.createElement('div');
     const bookPagesDiv = document.createElement('div');
     const bookReadDiv = document.createElement('div');
+    const bookReadContainer = document.createElement('div');
     const toggleContainer = document.createElement('div');
     const toggleLabel = document.createElement('label');
     const input = document.createElement('input');
@@ -68,6 +69,7 @@ function displayBooks() {
     toggleLabel.setAttribute('class', 'switch');
     input.setAttribute('type', 'checkbox');
     span.classList.add('toggle', 'round');
+    bookReadContainer.setAttribute('class', 'book-read-container');
 
     const title = document.createTextNode(`${myLibrary[i].title}`);
     const author = document.createTextNode(`${myLibrary[i].author}`);
@@ -78,16 +80,16 @@ function displayBooks() {
     bookAuthorDiv.appendChild(author);
     bookPagesDiv.appendChild(pages);
     bookReadDiv.appendChild(read);
+    bookReadContainer.appendChild(toggleContainer);
+    bookReadContainer.appendChild(bookReadDiv);
     toggleContainer.appendChild(toggleLabel);
-    toggleContainer.appendChild(bookReadDiv);
     toggleLabel.appendChild(input);
     toggleLabel.appendChild(span);
 
     cardDiv.appendChild(bookTitleDiv);
     cardDiv.appendChild(bookAuthorDiv);
     cardDiv.appendChild(bookPagesDiv);
-    cardDiv.appendChild(bookReadDiv);
-    cardDiv.appendChild(toggleContainer);
+    cardDiv.appendChild(bookReadContainer);
 
     cardsInnerContainer.appendChild(cardDiv);
   }

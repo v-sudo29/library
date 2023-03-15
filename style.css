@@ -186,13 +186,13 @@ svg {
   flex-direction: column;
   gap: 10px;
 
-  font-size: 22px;
+  font-size: 17px;
   font-weight: 500;
 }
 
 /* Textboxes */
 .textbox {
-  line-height: 3rem;
+  line-height: 2.5rem;
   border: none;
   appearance: none;
   -webkit-appearance: none;
@@ -201,7 +201,7 @@ svg {
 
   border: 2px solid #e5e7eb;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 15px;
   padding: 0 10px;
 }
 

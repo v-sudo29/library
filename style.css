@@ -176,7 +176,7 @@ body {
 }
 
 /* Textboxes */
-.input-textbox {
+.textbox {
   line-height: 1.8rem;
   border: none;
   appearance: none;
@@ -185,9 +185,13 @@ body {
   -moz-appearance: none;
 
   border: 2px solid #ddd;
-    border-radius: 4px;
-    font-size: 17px;
-    padding: 0 5px;
+  border-radius: 4px;
+  font-size: 17px;
+  padding: 0 5px;
+}
+
+::placeholder {
+  color: #d1d5db;
 }
 
 input::-webkit-outer-spin-button,

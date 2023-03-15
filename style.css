@@ -117,7 +117,7 @@ body {
   transform: translate(-50%, -70%) scale(0);
   z-index: 10;
   border-radius: 15px;
-  background-color: white;
+  background-color: #f3f4f6;
 }
 
 .modal-header, .modal-body {
@@ -145,7 +145,7 @@ body {
 
 .close-button {
   border: none;
-  background-color: white;
+  background-color: #f3f4f6;
   font-size: 35px;
   cursor: pointer;
 }
@@ -157,6 +157,7 @@ body {
   border-bottom-left-radius: 15px;
 }
 
+/* Form */
 #new-book-form {
   display: flex;
   flex-flow: column;
@@ -174,6 +175,12 @@ body {
   font-weight: 500;
 }
 
+/* Textboxes */
+.input-textbox {
+  border: none;
+}
+
+/* Checkbox */
 .checkbox-container {
   display: flex;
   gap: 8px;
@@ -190,6 +197,7 @@ body {
   font-weight: 500;
 }
 
+/* Submit and Cancel Buttons */
 .buttons-pair {
   display: flex;
   justify-content: center;
@@ -214,7 +222,7 @@ body {
 }
 
 .cancel-button {
-  background-color: #f3f4f6;;
+  background-color: #e5e7eb;
 }
 
 .cancel-button:hover {

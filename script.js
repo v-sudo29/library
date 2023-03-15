@@ -3,6 +3,7 @@ const myLibrary =[];
 const overlay = document.querySelector('#overlay');
 const modal = document.querySelector('.modal');
 const exitButton = document.querySelector('.close-button');
+const body = document.querySelector('body');
 
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
@@ -133,8 +134,6 @@ submitButton.addEventListener('click', (e) => {
 
 // BUTTON ('x'): Event listener for modal's exit button
 exitButton.addEventListener('click', modalOff);
-
-const body = document.querySelector('body');
 body.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     modalOff();
@@ -144,7 +143,6 @@ body.addEventListener('keydown', (e) => {
 
 // BUTTON ('cancel): Event listener for modal's cancel button
 const cancelButton = document.querySelector('.cancel-button') 
-
 cancelButton.addEventListener('click', () => {
   modalOff();
   overlayOff();

@@ -24,11 +24,20 @@ body {
   word-wrap: break-word;
 }
 
+img {
+  width: 60px;
+}
+
+svg {
+  width: 30px;
+}
+
 /* Header */
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   box-shadow: 0 -5px 10px 0px rgb(0 0 0 / 0.7);
   z-index: 1;
 }
@@ -120,10 +129,6 @@ body {
   background-color: #f3f4f6;
 }
 
-.modal-header, .modal-body {
-  /* border: 2px solid red; */
-}
-
 .modal-active {
   transform: translate(-50%, -70%) scale(1);
 }
@@ -141,6 +146,16 @@ body {
 
   font-size: 1.6rem;
   font-weight: bold;
+}
+
+.icon-and-title {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
 }
 
 .close-button {

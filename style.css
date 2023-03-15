@@ -187,7 +187,8 @@ input:checked + .toggle:before {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
 }
 
 .book-read {

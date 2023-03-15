@@ -76,6 +76,13 @@ function displayBooks() {
     const pages = document.createTextNode(`${myLibrary[i].pages}`);
     const read = document.createTextNode(`${myLibrary[i].read}`);
 
+    // Set toggle on or off based on 'read' status
+    if (read === 'Read') {
+      input.setAttribute('checked', 'true');
+    } else if (read === 'Not Read') {
+      input.setAttribute('checked', 'false');
+    }
+
     bookTitleDiv.appendChild(title);
     bookAuthorDiv.appendChild(author);
     bookPagesDiv.appendChild(pages);

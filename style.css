@@ -177,7 +177,23 @@ body {
 
 /* Textboxes */
 .input-textbox {
+  line-height: 1.8rem;
   border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+
+  border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 17px;
+    padding: 0 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Checkbox */

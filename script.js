@@ -142,6 +142,14 @@ body.addEventListener('keydown', (e) => {
   }
 });
 
+// BUTTON ('cancel): Event listener for modal's cancel button
+const cancelButton = document.querySelector('.cancel-button') 
+
+cancelButton.addEventListener('click', () => {
+  modalOff();
+  overlayOff();
+});
+
 // Event listener for clicking on active overlay to exit
 overlay.addEventListener('click', () => {
   modalOff();

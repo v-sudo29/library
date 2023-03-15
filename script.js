@@ -32,9 +32,9 @@ function addBookToLibrary() {
   let bookRead = null;
 
   if (bookReadBoolean === true) {
-    bookRead = 'yes';
+    bookRead = 'Read';
   } else {
-    bookRead = 'no';
+    bookRead = 'Not Read';
   }
 
   // Create new Book object to store user input
@@ -53,7 +53,8 @@ function displayBooks() {
     const bookAuthorDiv = document.createElement('div');
     const bookPagesDiv = document.createElement('div');
     const bookReadDiv = document.createElement('div');
-    const toggleContainer = document.createElement('label');
+    const toggleContainer = document.createElement('div');
+    const toggleLabel = document.createElement('label');
     const input = document.createElement('input');
     const span = document.createElement('span');
     const cardsInnerContainer = document.querySelector('.cards-container');
@@ -63,9 +64,10 @@ function displayBooks() {
     bookAuthorDiv.setAttribute('class', 'book-author');
     bookPagesDiv.setAttribute('class', 'book-pages');
     bookReadDiv.setAttribute('class', 'book-read');
-    toggleContainer.setAttribute('class', 'switch');
+    toggleContainer.setAttribute('class', 'toggle-container');
+    toggleLabel.setAttribute('class', 'switch');
     input.setAttribute('type', 'checkbox');
-    span.classList.add('slider', 'round');
+    span.classList.add('toggle', 'round');
 
     const title = document.createTextNode(`${myLibrary[i].title}`);
     const author = document.createTextNode(`${myLibrary[i].author}`);
@@ -76,8 +78,10 @@ function displayBooks() {
     bookAuthorDiv.appendChild(author);
     bookPagesDiv.appendChild(pages);
     bookReadDiv.appendChild(read);
-    toggleContainer.appendChild(input);
-    toggleContainer.appendChild(span);
+    toggleContainer.appendChild(toggleLabel);
+    toggleContainer.appendChild(bookReadDiv);
+    toggleLabel.appendChild(input);
+    toggleLabel.appendChild(span);
 
     cardDiv.appendChild(bookTitleDiv);
     cardDiv.appendChild(bookAuthorDiv);
@@ -177,7 +181,7 @@ overlay.addEventListener('click', () => {
 });
 
 // Sample books
-const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, 'yes');
+const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, 'Read');
 myLibrary.push(sampleBook);
 
 // Display current books onto page

@@ -104,8 +104,7 @@ svg {
   font-size: 22px;
 }
 
-/* THe switch - the box around the slider */
-
+/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
@@ -120,7 +119,7 @@ svg {
 }
 
 /* The slider */
-.slider {
+.toggle {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -132,7 +131,7 @@ svg {
   transition: .4s;
 }
 
-.slider:before {
+.toggle:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -144,30 +143,30 @@ svg {
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked + .toggle {
   background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus + .toggle {
   box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked + .toggle:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
 /* Rounded sliders */
-.slider.round {
+.toggle.round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.toggle.round:before {
   border-radius: 50%;
 }
 
-
+/* Card contents */
 .book-title {
   font-size: 30px;
   font-weight: 500;

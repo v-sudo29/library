@@ -135,7 +135,7 @@ function displayBooks() {
     cardDiv.appendChild(bookAuthorDiv);
     cardDiv.appendChild(bookPagesDiv);
     cardDiv.appendChild(bookReadContainer);
-    cardDiv.appendChild(removeBtn);
+    cardDiv.appendChild(removeBtnDiv);
 
     cardsInnerContainer.appendChild(cardDiv);
 
@@ -253,4 +253,11 @@ const bodyStatus = document.querySelector('body');
 bodyStatus.addEventListener('mouseover', () => {
   const allToggles = document.querySelectorAll('.toggle-switch');
   allToggles.forEach((toggle) => listenForToggle(toggle));
+
+  const allRemoveBtns = document.querySelectorAll('.removeBtn');
+  allRemoveBtns.forEach((button) => {
+    button.addEventListener('click', () => {
+      button.parentElement.parentElement.remove();
+    });
+  });
 });

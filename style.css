@@ -76,7 +76,7 @@ svg {
 }
 
 .new-book-button:hover {
-  background-color: #d4d4d8
+  background-color: #d4d4d8;
 }
 
 .new-book-button:focus {
@@ -197,7 +197,18 @@ input:checked + .toggle:before {
 }
 
 /* Remove button */
+.removeBtn {
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 10px 35px;
+  cursor: pointer;
+}
 
+.removeBtn:hover {
+  background-color: #d4d4d8;
+}
 
 /* Overlay */
 .overlay {

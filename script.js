@@ -84,6 +84,8 @@ function displayBooks() {
     const toggleLabel = document.createElement('label');
     const input = document.createElement('input');
     const span = document.createElement('span');
+    const removeBtnDiv = document.createElement('div');
+    const removeBtn = document.createElement('button');
     const cardsInnerContainer = document.querySelector('.cards-container');
 
     // Set attributes of elements
@@ -92,6 +94,8 @@ function displayBooks() {
     bookAuthorDiv.setAttribute('class', 'book-author');
     bookPagesDiv.setAttribute('class', 'book-pages');
     bookReadDiv.setAttribute('class', 'book-read');
+    removeBtnDiv.setAttribute('class', 'remove');
+    removeBtn.setAttribute('class', 'removeBtn');
     toggleContainer.setAttribute('class', 'toggle-container');
 
     // Remove title quotations and replace spaces with hyphens
@@ -112,8 +116,11 @@ function displayBooks() {
     const author = document.createTextNode(`${myLibrary[i].author}`);
     const pages = document.createTextNode(`${myLibrary[i].pages}`);
     const read = document.createTextNode(`${myLibrary[i].read}`);
+    const remove = document.createTextNode('Remove');
 
     // Append elements to parent node
+    removeBtn.appendChild(remove);
+    removeBtnDiv.appendChild(removeBtn);
     bookTitleDiv.appendChild(title);
     bookAuthorDiv.appendChild(author);
     bookPagesDiv.appendChild(pages);
@@ -128,6 +135,7 @@ function displayBooks() {
     cardDiv.appendChild(bookAuthorDiv);
     cardDiv.appendChild(bookPagesDiv);
     cardDiv.appendChild(bookReadContainer);
+    cardDiv.appendChild(removeBtn);
 
     cardsInnerContainer.appendChild(cardDiv);
 

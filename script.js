@@ -12,8 +12,6 @@ function addTitleQuotes (title) {
   return newTitle;
 }
 
-console.log(addTitleQuotes('hi there'));
-
 // FUNCTION: Book constructor
 function Book(title, author, pages, read) {
   this.title = addTitleQuotes(title);
@@ -42,6 +40,33 @@ function addBookToLibrary() {
   const newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
   myLibrary.push(newBook);
   return console.table(myLibrary);
+}
+
+// FUNCTION: run function to listen to all toggles
+function listenForToggle(toggle) {
+  toggle.addEventListener('click', () => {
+    
+    // Check data structure for 'read' status
+    const bookTitle = (addTitleQuotes(toggle.id)).replace("-", " ");
+    const bookIndex = myLibrary.findIndex(item => item.title === bookTitle);
+    const readStatus = myLibrary[bookIndex].read;
+    const readDivStatus = document.getElementById(`${toggle.id}-book-read`);
+    
+    // Remove or add checked attribute and change data in data structure
+    if (readStatus === 'Read') {
+      toggle.removeAttribute('checked');
+      readDivStatus.innerHTML = 'Not Read';
+
+      // Update data structure
+      myLibrary[bookIndex].read = 'Not Read';
+    } else if (readStatus === 'Not Read') {
+      toggle.setAttribute('checked', 'checked');
+      readDivStatus.innerHTML = 'Read';
+
+      // Update data structure
+      myLibrary[bookIndex].read = 'Read';
+    }
+  });
 }
 
 // FUNCTION: Displays books onto page
@@ -79,6 +104,7 @@ function displayBooks() {
     input.setAttribute('class', 'toggle-switch');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('id', `${noSpacesTitle}`);
+    bookReadDiv.setAttribute('id', `${noSpacesTitle}-book-read`);
     span.classList.add('toggle', 'round');
     bookReadContainer.setAttribute('class', 'book-read-container');
 
@@ -215,28 +241,8 @@ overlay.addEventListener('click', () => {
 });
 
 // Event listener for toggle
-const allToggles = document.querySelectorAll('.toggle-switch');
-allToggles.forEach((toggle) => {
-  toggle.addEventListener('click', () => {
-    // Check data structure for 'read' status
-    const bookTitle = (addTitleQuotes(toggle.id)).replace("-", " ");
-    const bookIndex = myLibrary.findIndex(item => item.title === bookTitle);
-    const readStatus = myLibrary[bookIndex].read;
-    const readDivStatus = document.querySelector('.book-read');
-    console.table(myLibrary);
-    // Remove or add checked attribute and change data in data structure
-    if (readStatus === 'Read') {
-      toggle.removeAttribute('checked');
-      readDivStatus.innerHTML = 'Not Read';
-
-      // Update data structure
-      myLibrary[bookIndex].read = 'Not Read';
-    } else if (readStatus === 'Not Read') {
-      toggle.setAttribute('checked', 'checked');
-      readDivStatus.innerHTML = 'Read';
-
-      // Update data structure
-      myLibrary[bookIndex].read = 'Read';
-    }
-  });
+const bodyStatus = document.querySelector('body');
+bodyStatus.addEventListener('mouseover', () => {
+  const allToggles = document.querySelectorAll('.toggle-switch');
+  allToggles.forEach((toggle) => listenForToggle(toggle));
 });

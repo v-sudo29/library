@@ -66,8 +66,13 @@ function displayBooks() {
     bookPagesDiv.setAttribute('class', 'book-pages');
     bookReadDiv.setAttribute('class', 'book-read');
     toggleContainer.setAttribute('class', 'toggle-container');
+
+    const noQuotesTitle = myLibrary[i].title.slice(1, (myLibrary[i].title).length - 1);
+    const noSpacesTitle = noQuotesTitle.replace(" ", "-");
+
     toggleLabel.setAttribute('class', 'switch');
     input.setAttribute('type', 'checkbox');
+    input.setAttribute('id', `${noSpacesTitle}`);
     span.classList.add('toggle', 'round');
     bookReadContainer.setAttribute('class', 'book-read-container');
 
@@ -75,13 +80,6 @@ function displayBooks() {
     const author = document.createTextNode(`${myLibrary[i].author}`);
     const pages = document.createTextNode(`${myLibrary[i].pages}`);
     const read = document.createTextNode(`${myLibrary[i].read}`);
-
-    // Set toggle on or off based on 'read' status
-    if (read === 'Read') {
-      input.setAttribute('checked', 'true');
-    } else if (read === 'Not Read') {
-      input.setAttribute('checked', 'false');
-    }
 
     bookTitleDiv.appendChild(title);
     bookAuthorDiv.appendChild(author);
@@ -99,6 +97,21 @@ function displayBooks() {
     cardDiv.appendChild(bookReadContainer);
 
     cardsInnerContainer.appendChild(cardDiv);
+
+    // Set toggle on or off based on 'read' status
+    const inputDOM = document.getElementById(`${noSpacesTitle}`);
+
+    if (`${myLibrary[i].read}` === 'Read') {
+      inputDOM.setAttribute('checked', 'checked');
+    } else if (`${myLibrary[i].read}` === 'Not Read') {
+      inputDOM.removeAttribute('checked');
+    }
+
+    console.table(myLibrary);
+
+    if (read === "Read") {
+      inputDOM.setAttribute('checked', 'checked');
+    }
   }
 }
 

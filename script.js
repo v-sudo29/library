@@ -1,3 +1,4 @@
+
 // GLOBAL VARIABLES
 const myLibrary =[];
 const overlay = document.querySelector('#overlay');
@@ -75,6 +76,7 @@ function displayBooks() {
 
     // Set attributes of elements
     toggleLabel.setAttribute('class', 'switch');
+    input.setAttribute('class', 'toggle-switch');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('id', `${noSpacesTitle}`);
     span.classList.add('toggle', 'round');
@@ -198,6 +200,13 @@ cancelButton.addEventListener('click', () => {
   overlayOff();
 });
 
+// Sample books
+const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, 'Read');
+myLibrary.push(sampleBook);
+
+// Display current books onto page
+displayBooks();
+
 // Event listener for clicking on active overlay to exit
 overlay.addEventListener('click', () => {
   modalOff();
@@ -205,9 +214,29 @@ overlay.addEventListener('click', () => {
   resetForm();
 });
 
-// Sample books
-const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, 'Read');
-myLibrary.push(sampleBook);
+// Event listener for toggle
+const allToggles = document.querySelectorAll('.toggle-switch');
+allToggles.forEach((toggle) => {
+  toggle.addEventListener('click', () => {
+    // Check data structure for 'read' status
+    const bookTitle = (addTitleQuotes(toggle.id)).replace("-", " ");
+    const bookIndex = myLibrary.findIndex(item => item.title === bookTitle);
+    const readStatus = myLibrary[bookIndex].read;
+    const readDivStatus = document.querySelector('.book-read');
+    console.table(myLibrary);
+    // Remove or add checked attribute and change data in data structure
+    if (readStatus === 'Read') {
+      toggle.removeAttribute('checked');
+      readDivStatus.innerHTML = 'Not Read';
 
-// Display current books onto page
-displayBooks();
+      // Update data structure
+      myLibrary[bookIndex].read = 'Not Read';
+    } else if (readStatus === 'Not Read') {
+      toggle.setAttribute('checked', 'checked');
+      readDivStatus.innerHTML = 'Read';
+
+      // Update data structure
+      myLibrary[bookIndex].read = 'Read';
+    }
+  });
+});

@@ -241,12 +241,16 @@ cancelButton.addEventListener('click', () => {
   overlayOff();
 });
 
-// Sample books
+// Sample book
 const sampleBook = new Book('Sample', 'Rick Riordan', 297, 'Read');
 myLibrary.push(sampleBook);
 
 // Display current books onto page
 displayBooks();
+
+// Hide sample book
+const sampleCard = document.querySelector('#Sample-book-read');
+sampleCard.parentElement.parentElement.style.display = 'none';
 
 // Event listener for clicking on active overlay to exit
 overlay.addEventListener('click', () => {

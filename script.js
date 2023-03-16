@@ -154,6 +154,13 @@ function displayBooks() {
   }
 }
 
+// FUNCTION: removes card
+function removeCard(button) {
+  button.addEventListener('click', () => {
+    button.parentElement.parentElement.remove();
+});
+}
+
 // FUNCTION: turns off overlay
 function overlayOff() {
   overlay.classList.remove(["overlay-active"]);
@@ -249,15 +256,10 @@ overlay.addEventListener('click', () => {
 });
 
 // Event listener for toggle
-const bodyStatus = document.querySelector('body');
-bodyStatus.addEventListener('mouseover', () => {
+body.addEventListener('mouseover', () => {
   const allToggles = document.querySelectorAll('.toggle-switch');
-  allToggles.forEach((toggle) => listenForToggle(toggle));
+  allToggles.forEach(toggle => listenForToggle(toggle));
 
   const allRemoveBtns = document.querySelectorAll('.removeBtn');
-  allRemoveBtns.forEach((button) => {
-    button.addEventListener('click', () => {
-      button.parentElement.parentElement.remove();
-    });
-  });
+  allRemoveBtns.forEach(button => removeCard(button));
 });

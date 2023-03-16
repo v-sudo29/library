@@ -48,6 +48,7 @@ function displayBooks() {
   const numberOfBooks = myLibrary.length;
 
   for (let i = numberOfBooks - 1; i < myLibrary.length; i += 1) {
+    // Create new elements for new card
     const cardDiv =  document.createElement('div');
     const bookTitleDiv = document.createElement('div');
     const bookAuthorDiv = document.createElement('div');
@@ -60,6 +61,7 @@ function displayBooks() {
     const span = document.createElement('span');
     const cardsInnerContainer = document.querySelector('.cards-container');
 
+    // Set attributes of elements
     cardDiv.setAttribute('class', 'card');
     bookTitleDiv.setAttribute('class', 'book-title');
     bookAuthorDiv.setAttribute('class', 'book-author');
@@ -67,15 +69,18 @@ function displayBooks() {
     bookReadDiv.setAttribute('class', 'book-read');
     toggleContainer.setAttribute('class', 'toggle-container');
 
+    // Remove title quotations and replace spaces with hyphens
     const noQuotesTitle = myLibrary[i].title.slice(1, (myLibrary[i].title).length - 1);
     const noSpacesTitle = noQuotesTitle.replace(" ", "-");
 
+    // Set attributes of elements
     toggleLabel.setAttribute('class', 'switch');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('id', `${noSpacesTitle}`);
     span.classList.add('toggle', 'round');
     bookReadContainer.setAttribute('class', 'book-read-container');
 
+    // Create text nodes
     const title = document.createTextNode(`${myLibrary[i].title}`);
     const author = document.createTextNode(`${myLibrary[i].author}`);
     const pages = document.createTextNode(`${myLibrary[i].pages}`);
@@ -106,8 +111,6 @@ function displayBooks() {
     } else if (`${myLibrary[i].read}` === 'Not Read') {
       inputDOM.removeAttribute('checked');
     }
-
-    console.table(myLibrary);
 
     if (read === "Read") {
       inputDOM.setAttribute('checked', 'checked');

@@ -1,4 +1,3 @@
-
 // GLOBAL VARIABLES
 const myLibrary =[];
 const overlay = document.querySelector('#overlay');
@@ -39,13 +38,12 @@ function addBookToLibrary() {
   // Create new Book object to store user input
   const newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
   myLibrary.push(newBook);
-  return console.table(myLibrary);
 }
 
 // FUNCTION: run function to listen to all toggles
 function listenForToggle(toggle) {
   toggle.addEventListener('click', () => {
-    
+
     // Check data structure for 'read' status
     const bookTitle = (addTitleQuotes(toggle.id)).replace("-", " ");
     const bookIndex = myLibrary.findIndex(item => item.title === bookTitle);
@@ -59,6 +57,7 @@ function listenForToggle(toggle) {
 
       // Update data structure
       myLibrary[bookIndex].read = 'Not Read';
+
     } else if (readStatus === 'Not Read') {
       toggle.setAttribute('checked', 'checked');
       readDivStatus.innerHTML = 'Read';
@@ -114,6 +113,7 @@ function displayBooks() {
     const pages = document.createTextNode(`${myLibrary[i].pages}`);
     const read = document.createTextNode(`${myLibrary[i].read}`);
 
+    // Append elements to parent node
     bookTitleDiv.appendChild(title);
     bookAuthorDiv.appendChild(author);
     bookPagesDiv.appendChild(pages);
@@ -227,7 +227,7 @@ cancelButton.addEventListener('click', () => {
 });
 
 // Sample books
-const sampleBook = new Book('Percy Jackson', 'Rick Riordan', 297, 'Read');
+const sampleBook = new Book('Sample', 'Rick Riordan', 297, 'Read');
 myLibrary.push(sampleBook);
 
 // Display current books onto page

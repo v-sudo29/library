@@ -196,6 +196,9 @@ input:checked + .toggle:before {
   align-items: center;
 }
 
+/* Remove button */
+
+
 /* Overlay */
 .overlay {
   position: fixed;

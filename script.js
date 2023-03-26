@@ -7,7 +7,7 @@ const body = document.querySelector('body');
 
 // FUNCTION: Put title in double quotes
 function addTitleQuotes (title) {
-  const newTitle = "\"" + title + "\"";
+  const newTitle = `"${  title  }"`;
   return newTitle;
 }
 
@@ -16,7 +16,7 @@ class Book {
   constructor(title, author, pages, read) {
     this.title = addTitleQuotes(title);
     this.author = author;
-    this.pages = pages + ' pages';
+    this.pages = `${pages  } pages`;
     this.read = read;
   }
 }

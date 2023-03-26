@@ -68,6 +68,23 @@ function listenForToggle(toggle) {
   });
 }
 
+// FUNCTION: removes card
+function removeCard(button) {
+  button.parentElement.parentElement.remove();
+}
+
+// FUNCTION: add event listener to toggle
+function addToggleEventListener(cardID) {
+  const currentToggle = document.getElementById(cardID);
+  listenForToggle(currentToggle);
+}
+
+// FUNCTION: add event listener to remove button
+function addRemoveButtonEventListener(cardID) {
+  const currentRemoveBtn = document.getElementById(cardID);
+  currentRemoveBtn.addEventListener('click', () => removeCard(currentRemoveBtn));
+}
+
 // FUNCTION: Displays books onto page
 function displayBooks() {
   const numberOfBooks = myLibrary.length;
@@ -107,6 +124,7 @@ function displayBooks() {
     input.setAttribute('class', 'toggle-switch');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('id', `${noSpacesTitle}`);
+    removeBtn.setAttribute('id', `${noSpacesTitle}AndRemoveBtn`);
     bookReadDiv.setAttribute('id', `${noSpacesTitle}-book-read`);
     span.classList.add('toggle', 'round');
     bookReadContainer.setAttribute('class', 'book-read-container');
@@ -151,14 +169,11 @@ function displayBooks() {
     if (read === "Read") {
       inputDOM.setAttribute('checked', 'checked');
     }
-  }
-}
 
-// FUNCTION: removes card
-function removeCard(button) {
-  button.addEventListener('click', () => {
-    button.parentElement.parentElement.remove();
-});
+    // Set event listeners for card: toggle and remove button
+    addToggleEventListener(`${noSpacesTitle}`);
+    addRemoveButtonEventListener(`${noSpacesTitle}AndRemoveBtn`);
+  }
 }
 
 // FUNCTION: turns off overlay
@@ -241,29 +256,9 @@ cancelButton.addEventListener('click', () => {
   overlayOff();
 });
 
-// Sample book
-const sampleBook = new Book('Sample', 'Rick Riordan', 297, 'Read');
-myLibrary.push(sampleBook);
-
-// Display current books onto page
-displayBooks();
-
-// Hide sample book
-const sampleCard = document.querySelector('#Sample-book-read');
-sampleCard.parentElement.parentElement.style.display = 'none';
-
 // Event listener for clicking on active overlay to exit
 overlay.addEventListener('click', () => {
   modalOff();
   overlayOff();
   resetForm();
-});
-
-// Event listener for toggle
-body.addEventListener('mouseover', () => {
-  const allToggles = document.querySelectorAll('.toggle-switch');
-  allToggles.forEach(toggle => listenForToggle(toggle));
-
-  const allRemoveBtns = document.querySelectorAll('.removeBtn');
-  allRemoveBtns.forEach(button => removeCard(button));
 });

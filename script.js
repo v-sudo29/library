@@ -12,11 +12,13 @@ function addTitleQuotes (title) {
 }
 
 // FUNCTION: Book constructor
-function Book(title, author, pages, read) {
-  this.title = addTitleQuotes(title);
-  this.author = author;
-  this.pages = pages + ' pages';
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = addTitleQuotes(title);
+    this.author = author;
+    this.pages = pages + ' pages';
+    this.read = read;
+  }
 }
 
 // FUNCTION: Adds book to myLibrary array
